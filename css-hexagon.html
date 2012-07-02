@@ -3,7 +3,7 @@
 <style>
     body {
         margin: 0;
-        border-top: 10px solid #663666;
+        border-top: 10px solid #333;
         font-family: "Helvetica Neue", Arial, Helvetica;
         font-weight: 300;
     }
@@ -26,6 +26,37 @@
     .container {
         width: 960px;
         margin: 50px auto;
+    }
+    a {
+        color: #666;
+        text-decoration: none;
+    }
+    a:hover {
+        color: #999;
+    }
+    .nav {
+        background: #EEE;
+        color: #333;
+        height: 28px;
+        font-size: 10pt;
+    }
+    .nav ul {
+        list-style: none;
+        width: 960px;
+        margin: 0 auto;
+    }
+    .nav li {
+        float: left;
+        padding: 5px 16px;
+    }
+    .nav li.active {
+        background: #333;
+        color: #FFF;
+        font-weight: bold;
+        padding: 4px 16px 7px;
+    }
+    .nav li.active a {
+        color: #FFF;
     }
     .box-1 {
         height: 100px;
@@ -183,6 +214,15 @@
         border-right: 52px solid transparent;
     }
 </style>
+
+<div class="nav">
+<ul>
+    <li><a href="http://jtauber.com/">James Tauber</a></li>
+    <li><a href="http://jtauber.github.com/">Open Source</a></li>
+    <li class="active"><a href="http://jtauber.github.com/articles/">Articles</a></li>
+    <li><a href="http://ainulindale.github.com/">Compositions</a></li>
+</ul>
+</div>
 
 <div class="container">
 <h1>CSS Hexagon Tutorial <span>by James Tauber</span></h1>
