@@ -1,0 +1,345 @@
+<html>
+<title>Information Architecture: Past, Present and Future</title>
+<style>
+    body {
+        margin: 0;
+        font-family: "Helvetica Neue", Arial, Helvetica;
+        font-weight: 300;
+        border-top: 10px solid #333;
+    }
+    code, pre {
+        font-family: Menlo, Monaco, "Andale Mono", monospace;
+    }
+    h1 {
+        font-weight: bold;
+    }
+    h2 {
+        margin-top: 2em;
+    }
+    h1 span, h2 span {
+        font-weight: 300;
+        color: #666;
+    }
+    .abstract {
+        font-size: 16pt;
+    }
+    pre {
+        margin-bottom: 50px;
+        font-size: 10pt;
+        background: #F7F7F7;
+        padding: 5px 10px;
+    }
+    blockquote {
+        font-size: 18pt;
+        margin: 0 0 0 50px;
+    }
+    cite {
+        font-size: 10pt;
+        margin: 0 0 0 50px;
+    }
+    .container {
+        width: 960px;
+        margin: 50px auto;
+    }
+    a {
+        color: #666;
+        text-decoration: none;
+    }
+    a:hover {
+        color: #999;
+    }
+    .nav {
+        background: #EEE;
+        color: #333;
+        height: 28px;
+        font-size: 10pt;
+    }
+    .nav ul {
+        list-style: none;
+        width: 960px;
+        margin: 0 auto;
+    }
+    .nav li {
+        float: left;
+        padding: 5px 16px;
+    }
+    .nav li.active {
+        background: #333;
+        color: #FFF;
+        font-weight: bold;
+        padding: 4px 16px 7px;
+    }
+    .nav li.active a {
+        color: #FFF;
+    }
+</style>
+
+<div class="nav">
+<ul>
+    <li><a href="http://jtauber.com/">James Tauber</a></li>
+    <li><a href="http://jtauber.github.com/">Open Source</a></li>
+    <li class="active"><a href="http://jtauber.github.com/articles/">Articles</a></li>
+    <li><a href="http://ainulindale.github.com/">Compositions</a></li>
+</ul>
+</div>
+
+<div class="container">
+
+<h1>Information Architecture: Past, Present and Future<br /><span>by James Tauber</span></h1>
+
+
+<div class="abstract">
+    <p>Here are some thoughts on the information elements and architecture of my site in the past and
+        how it should be structured moving forward. After a tour of the history of the site, I talk
+        about the types of information I'll likely want to support on the new site and ways of
+        organizing them.</p>
+</div>
+
+<section>
+    <h2>What has the site historically contained?</h2>
+    
+    <h3>First Age (1996-1998)</h3>
+    
+    <p>Early on, <b>jtauber.com</b> contained brief biographical information and a list of interests.
+        The idea was that if someone saw me on a mailing list or USENET group and wanted to know a
+        bit more about me and if we shared common interests, they could visit the one-page site.</p>
+    
+    <p>It was also a place I could put photos, files, etc. for friends to download.</p>
+    
+    <p>Then I started writing some informational articles (mostly about SGML at first) and hosted some
+        projects (like the Java Class Warehouse, a collection of reusable Java classes written by others)
+        and mailing list archives.</p>
+    
+    <h3>Second Age (1999-2001)</h3>
+        
+    <p>I started doing speaking engagements on XML in 1997 and that really started to pick up by 1999. I
+        was also doing my first open source projects that had other users. So <b>jtauber.com</b> became:
+        brief biographical information, upcoming speaking engagements (also slides from previous ones),
+        interests and open source projects.</p>
+        
+    <p>The open source projects were initially hosted on the site but then started to move to places
+        like SourceForge.</p>
+        
+    <p>I also had a bunch of genealogical information up on the site.</p>
+    
+    <h3>Third Age (2002-2003)</h3>
+    
+    <p>By 2002, I'd stopped doing speaking engagements. Most of my open source projects were on
+        SourceForge although I had some small scripts hosted on <b>jtauber.com</b> itself. The home page
+        had biographical information and a list of non-code projects, all external sites. It also linked
+        to a separate page for open source software and interests.</p>
+    
+    <p>The software page just had links to SourceForge or local scripts.</p>
+    
+    <p>The interests page had a hierarchy of areas of interest, some of the nodes of which were
+        links to specific pages talking about the particulars of my interest. For example, I had a /music/
+        section and within that /music/prokofiev/ that said a little about my love for the music of 
+        Prokofiev and linked to a page /music/prokfiev/toccata/ dedicated to his Op. 11 Toccata.</p>
+    
+    <p>I was using Advogato as a diary of occasional software development musings&mdash;a forerunner to
+        a blog.</p>
+    
+    <h3>Fourth Age (2003-2004)</h3>
+    
+    <p>Rather than essentially static html, in 2003 I wrote a basic CMS called Leonardo for enabling me
+        to more easily add new topic pages and to do so via a web interface.</p>
+    
+    <p>The home page contained biographical information and a list of links to open source software
+        projects, other non-OSS projects and interests. I had a small number of informational articles
+        on topics within my areas of interest.</p>
+    
+    <p>The site was essentially a password protected wiki at first. I later added a blog which was
+        nothing more than a date-based wiki page.</p>
+    
+    <p>I served up some static files such as old slide presentations, samples of my music
+        compositions, etc.</p>
+    
+    <h3>Fifth Age (2004-2008)</h3>
+    
+    <p>My blogging really took off and most of the activity on the site was in the form of blog posts.
+        Some posts were short announcements or musings. Others were informational articles or series of
+        articles running for years.</p>
+    
+    <p>I continued to develop Leonardo and ultimately a framework started to emerge out of it. I ended up
+        spending more of my time on framework features than improving my site and ultimately did a
+        quick-and-dirty port of Leonardo to Django. Part of this sprint is rewriting that code :-)</p>
+    
+    <p>Beside the fact that Leonardo was a wiki that happened to also be a blog, another differentiator
+        that I still think is quite innovative is that categories are really just other pages. In other
+        words, when I put a blog post in the "django" category / tag it actually just links it to the
+        general Django page on my site. This also means you can go to a page about one of my projects
+        or interests and see the blog posts about that project or interest&mdash;not mediated through a
+        separate tag or category: the project/interest <em>is</em> the tag/category.</p>
+    
+    <h3>Sixth Age (2008-2009)</h3>
+    
+    <p>I started to use Twitter a lot more and my blogging pretty much dried up. In November 2008,
+        I forced myself to write 51 blog posts as part of the blog version of NaNoWriMo but I've
+        struggled to write one tenth of that in the year since and many of those were just
+        announcements.</p>
+    
+    <p>It's partly this shift over the last few years (or indeed thirteen years) that has got me
+        rethinking what should be on my site.</p>
+    
+    <p>The site also increasingly had links to my presence elsewhere, not only on twitter but also
+        Facebook, LinkedIn and GitHub.
+    
+    <h3>Summary</h3>
+    
+    <p>Here are some of the various components my site has had over the last thirteen years:</p>
+    
+    <ul class="square">
+        <li>biographical information</li>
+        <li>contact information and links to external presence</li>
+        <li>interests (organized into a taxonomy with some description of my particular interests)</li>
+        <li>affiliations (with links and in some cases a bit of history)</li>
+        <li>open source software projects (links, descriptions and sometimes everything)</li>
+        <li>short code snippets</li>
+        <li>web site projects (links and descriptions)</li>
+        <li>private files to make available for others to download</li>
+        <li>MIDI files or recordings of music compositions</li>
+        <li>family history information</li>
+        <li>informational articles</li>
+        <li>speaking and other event information</li>
+        <li>blog posts</li>
+    </ul>
+    
+    <p>That is not to say the new site needs to cover all of that. There are plenty of external services
+        that provide hosting of this sort of thing. I have, however, long been interested in the
+        <b>datalibre</b> concept of hosting your own data and simply letting others aggregate it.</p>
+</section>
+
+<section>
+    <h2>A taxonomy of blog post types</h2>
+    
+    <p>I think one of the keys to the information architecture of my new site is going to be
+        separating out the different things I've used my blog for the last 5 years. As a precursor to
+        that, here's an initial attempt at some of the sorts of things I've blogged about:</p>
+    
+    <ul class="square">
+        <li>administrative announcements about the site</li>
+        <li>reflections on the site, stats, etc (kind of like this page)</li>
+        <li>year in review (New Year or birthday; achievements in past year, future goals)
+        <li>personal announcements (life event or maybe just some external reference like an article or
+            interview)</li>
+        <li>project announcements (release, milestone, progress update, etc)&mdash;project could be code,
+            a website, a film, a piece of music, my linguistic research</li>
+        <li>results of some (usually computational) experiment</li>
+        <li>blogging an event (e.g conference: interesting talks, who I met, etc)</li>
+        <li>public congratulations of others</li>
+        <li>technical observations / cool little tricks</li>
+        <li>news with some analysis</li>
+        <li>something funny or annoying that just happened to me</li>
+        <li>quick question / show of hands</li>
+        <li>I'm at X / going to X so who wants to meet up?</li>
+        <li>linguistic observations</li>
+        <li>from the archives (something of possible interest I've dug up from my past)</li>
+        <li>other scientific observations / questions (less developed than informational article
+            below)</li>
+        <li>book, film or music review</li>
+        <li>code snippet to do something fun (implement an algorithm, demonstrate a concept, etc)</li>
+        <li>tech problem / troubleshooting / request for help (sometimes with solution!)</li>
+        <li>musings about technology (especially Web or programming)</li>
+        <li>informational article or series&mdash;style/tone:
+            sometimes conveying orthodoxy, sometimes musing on my own slant, sometimes documenting my
+            own path to understanding; topic: music theory, mathematics, science, programming, filmmaking, photography, linguistics, economics</li>
+    </ul>
+    
+    <p>Some posts overlap multiple types and some are now far better suited to Twitter but that leads on
+        to the next topic.</p>
+</section>
+
+<section>
+    <h2>Blogging, Twitter and something in between</h2>
+    
+    <p>I don't want to get too deep into the psychology of why I stopped blogging other than to suggest that
+        when you don't blog for a while, it raises the bar of what you break your blogging drought with.
+        There was one time I didn't blog for a couple of months and the next time I blogged, a friend said
+        "I've waited months for a blog post and you post THAT!".</p>
+    
+    <p>So to get back to putting more content on my site, I need to give myself permission to do
+        shorter, less well-thought-out posts and not feel that every post has to be an epic article. Looking
+        at the taxonomy above, it's clear that in the past I have made blog posts considerably shorter than
+        informational articles.</p>
+    
+    <p>I think there is value in distinguishing short-form and long-term posts and making enough of a
+        separation that there is less pressure to always do long-term posts. But as well as the dimension of
+        length, I think it also makes a lot of sense to distinguish posts which are ephemeral (or at least
+        quite specific to the time in which they were made) from those that are, for the most part, timeless.</p>
+    
+    <p>Taking these two dimensions into account, we can see that short, ephemeral posts and things like
+        announcements and quick questions can be done on twitter or on a different part of the site from more
+        in-depth articles. And even the informational articles might be better suited to the original wiki pages
+        that Leonardo had before support for blogs was introduced.</p>
+    
+    <p>For a time, blogging was a hammer so everything looked like a blog post to me. After this site sprint,
+        I'd like my site to make more of a distinction between different kinds of information.</p>
+    
+    <p>A tentative approach I'm adopting for this sprint is to make the following distinctions:</p>
+    
+    <ul class="square">
+        <li>announcements</li>
+        <li>musings, thoughts and observations</li>
+        <li>informational articles</li>
+    </ul>
+    
+    <p>I'm still giving more thought to if these three categories are enough (should reviews be separate?
+        what about questions?) and exactly how all the
+        blog post types listed in the previous section might fit in here (excepting the ones that will
+        be exclusively on a site like Twitter).
+    </p>
+    
+    <p>There is also the question of whether there are things I'm using Twitter for that could be
+        done on the site (perhaps in addition to, rather than instead of). Useful or interesting links
+        might be an example of that. I've never posted bare links on my blog before but it might make
+        sense to do so elsewhere on the site, perhaps in the context of what the link relates to.
+</section>
+
+<section>
+    <h2>The broader site and a focus on projects and interests</h2>
+    
+    <p>The goal of the site sprint isn't just to rethink my blog and break it apart in some act of
+        balkanization. It is also to rethink the overall structure of the site and the parts which aren't
+        just time-based posts.</p>
+    
+    <p>One way I'm considering doing that is to think about the site top-down in terms of projects I'm
+        working on, interests I have and how various announcements, questions, musings, links, articles,
+        etc. actually relate to the project or interest.</p>
+    
+    <p>Blogging has, in a number of cases, been a bad way to make available stuff I'm working on
+        (at least to the extent that it's the only way I'm making it available). A good example is my Dr Horrible
+        covers which I posted a few at a time on my blog. That made it difficult to have a single page
+        where someone could go to get all of them. If the Dr Horrible Covers project was the primary
+        object and the blog posts were viewed merely as announcements of new releases to the project,
+        it would have been easier for me to manage and easier for site visitors to get to what they
+        wanted.</p>
+        
+    <p>I'll update this page with more on that soon.</p>
+</section>
+
+
+<div style="margin: 50px 0; float: right">
+<a href="https://twitter.com/share" class="twitter-share-button" data-via="jtauber" data-size="large" data-related="jtauber">Tweet</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+<a href="https://twitter.com/jtauber" class="twitter-follow-button" data-show-count="true" data-size="large">Follow @jtauber</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+</div>
+
+
+
+</div>
+<script type="text/javascript">
+  var _gauges = _gauges || [];
+  (function() {
+    var t   = document.createElement('script');
+    t.type  = 'text/javascript';
+    t.async = true;
+    t.id    = 'gauges-tracker';
+    t.setAttribute('data-site-id', '4f7c4470613f5d112800015d');
+    t.src = '//secure.gaug.es/track.js';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(t, s);
+  })();
+</script>
+</html>
+
